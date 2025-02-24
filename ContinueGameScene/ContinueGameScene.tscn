@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsty4ytvxoua3"]
+
+[ext_resource type="Texture2D" uid="uid://c3tp0eb3yoenw" path="res://pictures/backgrounds/background.jpg" id="1_5m7up"]
+[ext_resource type="Script" path="res://ContinueGameScene/ContinueGameScene.cs" id="1_7wudl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agpyg"]
+texture = ExtResource("1_5m7up")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_md6m2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv47h"]
+bg_color = Color(0.724643, 0.724643, 0.724643, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ychn3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeisa"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[node name="ContinueGameScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7wudl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_agpyg")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = 167.0
+offset_right = 93.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_md6m2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vv47h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ychn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aeisa")
+text = "Назад"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -21.0
+offset_right = 317.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="ContinueButton1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_md6m2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vv47h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ychn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aeisa")
+text = "Сохранение 1"
+
+[node name="ContinueButton2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_md6m2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vv47h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ychn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aeisa")
+text = "Сохранение 2"
+
+[node name="ContinueButton3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_md6m2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vv47h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ychn3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_aeisa")
+text = "Сохранение 3"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
