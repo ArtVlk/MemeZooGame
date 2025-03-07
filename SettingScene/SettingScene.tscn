@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://3cim8dsc83rv"]
 
-[ext_resource type="Script" path="res://SettingScene/SettingScene.cs" id="1_584m3"]
+[ext_resource type="Script" uid="uid://cb2bs60hfjtah" path="res://SettingScene/SettingScene.cs" id="1_584m3"]
 [ext_resource type="Texture2D" uid="uid://c3tp0eb3yoenw" path="res://pictures/backgrounds/background.jpg" id="2_exakr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iuj57"]

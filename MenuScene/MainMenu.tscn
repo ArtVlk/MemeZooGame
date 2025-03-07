@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccuqcrou56xaj"]
 
-[ext_resource type="Script" path="res://MenuScene/MainMenu.cs" id="1_eqyrb"]
+[ext_resource type="Script" uid="uid://cxwevqlujp7wd" path="res://MenuScene/MainMenu.cs" id="1_eqyrb"]
 [ext_resource type="Texture2D" uid="uid://c3tp0eb3yoenw" path="res://pictures/backgrounds/background.jpg" id="2_257qe"]
 [ext_resource type="FontFile" uid="uid://b2daysvm2i77l" path="res://pictures/texts/Zoon Hoot.otf" id="3_3hv2w"]
 
@@ -76,9 +76,9 @@ theme_override_constants/separation = 9
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5nche")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvl2j")
@@ -90,9 +90,9 @@ text = "Начать игру"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5nche")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvl2j")
@@ -104,9 +104,9 @@ text = "Продолжить игру"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5nche")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvl2j")
@@ -118,9 +118,9 @@ text = "Настройки"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5nche")
 theme_override_styles/hover = SubResource("StyleBoxFlat_fvl2j")
