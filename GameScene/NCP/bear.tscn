@@ -1,0 +1,125 @@
+[gd_scene load_steps=17 format=3 uid="uid://br1bxffqf5rsy"]
+
+[ext_resource type="Script" uid="uid://cr8k4hs5673j0" path="res://GameScene/NCP/bear.gd" id="1_3at32"]
+[ext_resource type="Texture2D" uid="uid://c3f3yde7xeywg" path="res://pictures/Animal.png" id="2_igksr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igksr"]
+atlas = ExtResource("2_igksr")
+region = Rect2(0, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqlwd"]
+atlas = ExtResource("2_igksr")
+region = Rect2(48, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ukg"]
+atlas = ExtResource("2_igksr")
+region = Rect2(96, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc58n"]
+atlas = ExtResource("2_igksr")
+region = Rect2(144, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yeqi"]
+atlas = ExtResource("2_igksr")
+region = Rect2(192, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gamb"]
+atlas = ExtResource("2_igksr")
+region = Rect2(240, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a07k1"]
+atlas = ExtResource("2_igksr")
+region = Rect2(0, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xidj8"]
+atlas = ExtResource("2_igksr")
+region = Rect2(48, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edbip"]
+atlas = ExtResource("2_igksr")
+region = Rect2(96, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0hu8"]
+atlas = ExtResource("2_igksr")
+region = Rect2(144, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfvx6"]
+atlas = ExtResource("2_igksr")
+region = Rect2(192, 450, 48, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuwpb"]
+atlas = ExtResource("2_igksr")
+region = Rect2(240, 450, 48, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv06r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igksr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqlwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2ukg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc58n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yeqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gamb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a07k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xidj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edbip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0hu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfvx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuwpb")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oinfj"]
+size = Vector2(37, 23)
+
+[node name="Bear" type="CharacterBody2D"]
+script = ExtResource("1_3at32")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_yv06r")
+animation = &"walking"
+
+[node name="WalkingTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ChageStateTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_oinfj")
+
+[connection signal="timeout" from="WalkingTimer" to="." method="_on_walking_timer_timeout"]
+[connection signal="timeout" from="ChageStateTimer" to="." method="_on_chage_state_timer_timeout"]

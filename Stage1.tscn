@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://181ox7q7eheh"]
+
+[ext_resource type="PackedScene" uid="uid://kbxl405xxytn" path="res://GameScene/NCP/human.tscn" id="1_06ygk"]
+
+[sub_resource type="Curve2D" id="Curve2D_1j076"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 127, 313, 0, 0, 0, 0, 216, 313, 0, 0, 0, 0, 215, 104, 0, 0, 0, 0, 932, 104, 0, 0, 0, 0, 934, 426, 0, 0, 0, 0, 937, 516, 0, 0, 0, 0, 216, 516, 0, 0, 0, 0, 216, 313, 0, 0, 0, 0, 127, 313)
+}
+point_count = 9
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_1j076")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(127, 313)
+rotates = false
+loop = false
+
+[node name="Human" parent="PathFollow2D" instance=ExtResource("1_06ygk")]
+position = Vector2(1, 1)
