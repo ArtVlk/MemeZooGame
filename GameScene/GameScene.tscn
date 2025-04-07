@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://8wem0s6tem0l"]
+[gd_scene load_steps=13 format=4 uid="uid://8wem0s6tem0l"]
 
+[ext_resource type="Script" uid="uid://k22a070u8qif" path="res://GameScene/game_scene.gd" id="1_1j076"]
 [ext_resource type="Texture2D" uid="uid://bcwn5reyx84q1" path="res://pictures/Items.png" id="1_neioa"]
 [ext_resource type="Texture2D" uid="uid://c2r3sacqn5e7s" path="res://pictures/AnimationItems.png" id="2_620yw"]
 [ext_resource type="PackedScene" uid="uid://j7j6wa3h8ytx" path="res://GameScene/UIScene/UI.tscn" id="2_muu46"]
 [ext_resource type="Script" uid="uid://cm11wyfyf8gg8" path="res://GameScene/path_spawner.gd" id="4_xlp0p"]
+[ext_resource type="PackedScene" uid="uid://c0pcbkbf77u4w" path="res://GameScene/Cages/cage_spawner.tscn" id="7_7s1j4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muu46"]
 texture = ExtResource("1_neioa")
@@ -1778,6 +1780,7 @@ texture = ExtResource("2_620yw")
 sources/0 = SubResource("TileSetAtlasSource_xlp0p")
 
 [node name="GamesScene" type="Node2D"]
+script = ExtResource("1_1j076")
 
 [node name="World" type="TileMapLayer" parent="."]
 
@@ -1802,5 +1805,19 @@ script = ExtResource("4_xlp0p")
 
 [node name="Timer" type="Timer" parent="PathSpawner"]
 autostart = true
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="CageSpawner" parent="Spawners" instance=ExtResource("7_7s1j4")]
+position = Vector2(433, 221)
+
+[node name="CageSpawner2" parent="Spawners" instance=ExtResource("7_7s1j4")]
+position = Vector2(792, 227)
+
+[node name="CageSpawner3" parent="Spawners" instance=ExtResource("7_7s1j4")]
+position = Vector2(433, 411)
+
+[node name="CageSpawner4" parent="Spawners" instance=ExtResource("7_7s1j4")]
+position = Vector2(788, 411)
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]

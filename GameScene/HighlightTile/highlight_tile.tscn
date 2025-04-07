@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwp5ldcfa8gi4"]
+
+[ext_resource type="Script" uid="uid://bww2u1m741nsh" path="res://GameScene/HighlightTile/highlight_tile.gd" id="1_g8kxi"]
+[ext_resource type="Texture2D" uid="uid://bgarv6w02koi7" path="res://pictures/cursor_box.png" id="2_bw6lv"]
+
+[node name="HighlightTile" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_g8kxi")
+
+[node name="CursorBox" type="Sprite2D" parent="."]
+texture = ExtResource("2_bw6lv")

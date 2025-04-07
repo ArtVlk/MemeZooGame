@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://j7j6wa3h8ytx"]
+[gd_scene load_steps=3 format=3 uid="uid://j7j6wa3h8ytx"]
 
 [ext_resource type="Script" uid="uid://cxbtbq00kwj1f" path="res://GameScene/UIScene/CameraController.cs" id="1_566e1"]
+[ext_resource type="PackedScene" uid="uid://cwp5ldcfa8gi4" path="res://GameScene/HighlightTile/highlight_tile.tscn" id="2_sf3en"]
 
 [node name="UI" type="CanvasLayer"]
 
 [node name="CameraController" type="Camera2D" parent="."]
+position = Vector2(961, 539)
 script = ExtResource("1_566e1")
+
+[node name="HighlightTile" parent="." instance=ExtResource("2_sf3en")]
+position = Vector2(-16, -16)
