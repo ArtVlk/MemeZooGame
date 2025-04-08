@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvqoxeiqh7203"]
+
+[ext_resource type="PackedScene" uid="uid://bnqukyup4tyo7" path="res://GameScene/Cages/base_cage.tscn" id="1_0gsvy"]
+
+[node name="BearCage" instance=ExtResource("1_0gsvy")]

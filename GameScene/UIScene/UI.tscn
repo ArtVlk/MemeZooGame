@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://j7j6wa3h8ytx"]
+[gd_scene load_steps=5 format=3 uid="uid://j7j6wa3h8ytx"]
 
 [ext_resource type="Script" uid="uid://cxbtbq00kwj1f" path="res://GameScene/UIScene/CameraController.cs" id="1_566e1"]
 [ext_resource type="PackedScene" uid="uid://cwp5ldcfa8gi4" path="res://GameScene/HighlightTile/highlight_tile.tscn" id="2_sf3en"]
+[ext_resource type="Script" uid="uid://cx4wxgxijrvhr" path="res://GameScene/UIScene/cage_selection_overlay.gd" id="3_5lmwt"]
+[ext_resource type="PackedScene" uid="uid://cbvlrf0ua61i6" path="res://GameScene/UIScene/Panels/cage_selection_window.tscn" id="3_da00h"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -11,3 +13,18 @@ script = ExtResource("1_566e1")
 
 [node name="HighlightTile" parent="." instance=ExtResource("2_sf3en")]
 position = Vector2(-16, -16)
+
+[node name="CageSelectionOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_5lmwt")
+
+[node name="CageSelectionWindow" parent="CageSelectionOverlay" instance=ExtResource("3_da00h")]
+visible = false
+layout_mode = 0
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 248.0
+offset_bottom = 140.0

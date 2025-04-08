@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0pcbkbf77u4w"]
+[gd_scene load_steps=4 format=3 uid="uid://c0pcbkbf77u4w"]
 
 [ext_resource type="Texture2D" uid="uid://cpnbcinef7mmv" path="res://icon.svg" id="1_01s6e"]
 [ext_resource type="Script" uid="uid://djoau4bkqbu5e" path="res://GameScene/Cages/cage_spawner.gd" id="1_mntwc"]
-[ext_resource type="PackedScene" uid="uid://bnqukyup4tyo7" path="res://GameScene/Cages/base_cage.tscn" id="2_og2hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mntwc"]
 size = Vector2(113, 111)
 
 [node name="CageSpawner" type="Area2D"]
 script = ExtResource("1_mntwc")
-cage_packed_scene = ExtResource("2_og2hg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_01s6e")

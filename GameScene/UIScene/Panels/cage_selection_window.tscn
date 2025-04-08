@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbvlrf0ua61i6"]
+
+[ext_resource type="Script" uid="uid://beyqymyor24bt" path="res://GameScene/UIScene/Panels/cage_selection_window.gd" id="1_l136u"]
+
+[sub_resource type="Theme" id="Theme_101sp"]
+
+[node name="CageSelectionWindow" type="Panel"]
+offset_right = 226.0
+offset_bottom = 123.0
+theme = SubResource("Theme_101sp")
+script = ExtResource("1_l136u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -29.0
+offset_right = 92.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Выберите клетку"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BearButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "мед"
+
+[node name="RabbitButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "крол"
+
+[node name="PicachyButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "пика"
+
+[node name="LionButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "лев"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BearButton" to="." method="_on_bear_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RabbitButton" to="." method="_on_rabbit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PicachyButton" to="." method="_on_picachy_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LionButton" to="." method="_on_lion_button_pressed"]
