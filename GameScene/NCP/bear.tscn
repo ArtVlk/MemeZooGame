@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -101,7 +101,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oinfj"]
-size = Vector2(37, 23)
+size = Vector2(39, 27)
 
 [node name="Bear" type="CharacterBody2D"]
 script = ExtResource("1_3at32")
@@ -110,6 +110,7 @@ script = ExtResource("1_3at32")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yv06r")
 animation = &"walking"
+frame_progress = 0.636721
 
 [node name="WalkingTimer" type="Timer" parent="."]
 autostart = true
@@ -118,7 +119,7 @@ autostart = true
 autostart = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 3.5)
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_oinfj")
 
 [connection signal="timeout" from="WalkingTimer" to="." method="_on_walking_timer_timeout"]
