@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvqoxeiqh7203"]
+[gd_scene load_steps=4 format=3 uid="uid://bvqoxeiqh7203"]
 
 [ext_resource type="PackedScene" uid="uid://bnqukyup4tyo7" path="res://GameScene/Cages/base_cage.tscn" id="1_0gsvy"]
+[ext_resource type="Script" uid="uid://cj5lhyr4eln8o" path="res://GameScene/Cages/bear_cage.gd" id="2_0kxsd"]
 [ext_resource type="PackedScene" uid="uid://br1bxffqf5rsy" path="res://GameScene/NCP/bear.tscn" id="2_vl305"]
 
 [node name="BearCage" instance=ExtResource("1_0gsvy")]
+script = ExtResource("2_0kxsd")
+animal_type = "Bear"
 
 [node name="Bear" parent="." index="1" instance=ExtResource("2_vl305")]

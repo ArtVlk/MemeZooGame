@@ -1,20 +1,34 @@
 extends CharacterBody2D
+class_name Human
 
 @onready var path_follow = get_parent()
 @onready var animated_sprite = $AnimatedSprite
 
 var initial_money: int
 var ticket_price: int
+@export var favorite_animal: String
+var seen_animals: Dictionary = {
+	"Bear": 0,
+	"Rabbit": 0,
+	"Picachy": 0,
+	"Lion": 0
+}
 
 func _ready():
 	randomize()
+	# Генерация параметров
 	initial_money = randi() % 151 + 50  # 50-200
 	ticket_price = randi() % 41 + 10    # 10-50
+	favorite_animal = ["Bear", "Rabbit", "Picachy", "Lion"][randi() % 4]
+	# Оплата билета
 	Global.add_money(ticket_price)
 	initial_money -= ticket_price
-	print("Вышел новый житель")
+	
+	
+	print("Новый посетитель:")
 	print("Денег: ", initial_money)
 	print("Его цена билета: ", ticket_price)
+	print("Любимое животное: ", favorite_animal)
 
 func _physics_process(delta):
 	# Двигаем по пути
@@ -40,6 +54,11 @@ func _physics_process(delta):
 	# Удаляем объект, если он дошёл до конца пути
 	if path_follow.progress_ratio >= 1.0:
 		var popularity_change = randi() % 11 - 5  # -5 до +5
-		Global.add_popularity(popularity_change)
-		print("Посетитель покинул зоопарк! Популярность изменена на: ", popularity_change)
+		print("Итоговые увиденные животные: ", seen_animals)
+		print("Популярность изменена на: ", popularity_change)
 		queue_free()
+
+func add_seen_animal(animal_type: String) -> void:
+	if seen_animals.has(animal_type):
+		seen_animals[animal_type] += 1
+		print("Вошел в зону: ", animal_type, " (всего: ", seen_animals[animal_type], ")")
