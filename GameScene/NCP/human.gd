@@ -3,16 +3,18 @@ extends CharacterBody2D
 @onready var path_follow = get_parent()
 @onready var animated_sprite = $AnimatedSprite
 
-# Новые переменные
-var money: int
+var initial_money: int
 var ticket_price: int
-var popularity_change: int
 
-# Сгенерировать случайные характеристики
 func _ready():
-	money = randi() % 100 + 50  # Случайное количество денег (от 50 до 150)
-	ticket_price = randi() % 20 + 5  # Случайная стоимость билета (от 5 до 25)
-	popularity_change = randi() % 5 - 2  # Случайное изменение популярности (от -2 до 2)
+	randomize()
+	initial_money = randi() % 151 + 50  # 50-200
+	ticket_price = randi() % 41 + 10    # 10-50
+	Global.add_money(ticket_price)
+	initial_money -= ticket_price
+	print("Вышел новый житель")
+	print("Денег: ", initial_money)
+	print("Его цена билета: ", ticket_price)
 
 func _physics_process(delta):
 	# Двигаем по пути
@@ -37,10 +39,7 @@ func _physics_process(delta):
 	
 	# Удаляем объект, если он дошёл до конца пути
 	if path_follow.progress_ratio >= 1.0:
-		apply_impact_on_popularity()  # Влияние на популярность при выходе
+		var popularity_change = randi() % 11 - 5  # -5 до +5
+		Global.add_popularity(popularity_change)
+		print("Посетитель покинул зоопарк! Популярность изменена на: ", popularity_change)
 		queue_free()
-
-# Метод для применения воздействия на популярность и деньги
-func apply_impact_on_popularity():
-	Global.add_money(ticket_price)
-	Global.add_popularity(popularity_change)
